@@ -1,0 +1,13 @@
+image: node:20
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - cp -r build/ public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
