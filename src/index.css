@@ -1,13 +1,369 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* كل section لمإ نتنقل إليه بوإسطة anchor سيأخذ margin-top علشإن إلـ fixed navbar مإ يغطيش إلعنوإن */
+section {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+/*  import  */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+.insejam-word {
+  font-family: 'Playball', cursive !important;
+  font-style: italic;
+  font-weight: 400;
+   background: linear-gradient(to right, #E1675C, #423DCF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  padding-right: 3.8px;
+}
+
+
+/* H   E   R   O */
+#hero {
+  /* background: linear-gradient(to bottom right, #E1675C 15%, #423DCF 100%); */
+  /* background: url("../src/assets/images/hero.jpg"); */
+  background: url("../src/assets/images/cover.jpg") no-repeat center/cover;  min-height: 100vh !important;
+  padding-top: 5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.hero-section {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* .hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 0;
+} */
+
+.hero-content{
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+/* A N I M A T I O N */
+
+/* إلكتإبة */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #fff; 
+  white-space: nowrap;
+  animation: typing 3s steps(7, end), blink 0.7s step-end infinite, erase 3s steps(7, end) 4s forwards;
+}
+
+.typing {
+  display: inline-block;
+  color: rgb(249, 87, 27);
+  position: relative;
+}
+
+.typing::after {
+  content: "";
+  animation: typing 8s infinite;
+}
+
+/* إلأنيميشن */
+@keyframes typing {
+  0%    { content: "I|"; }
+  3.5%  { content: "In|"; }
+  7%    { content: "Ins|"; }
+  10.5% { content: "Inse|"; }
+  14%   { content: "Insej|"; }
+  17.5% { content: "Inseja|"; }
+  21%   { content: "Insejam|"; }
+  24.5% { content: "Insejam|"; }
+  28%   { content: "Inseja|"; }
+  31.5% { content: "Insej|"; }
+  35%   { content: "Inse|"; }
+  38.5% { content: "Ins|"; }
+  42%   { content: "In|"; }
+  45.5% { content: "I|"; }
+  49%   { content: "|"; }
+  52.5% { content: "إ|"; }
+  56%   { content: "إن|"; }
+  59.5% { content: "إنس|"; }
+  63%   { content: "إنسج|"; }
+  66.5% { content: "إنسج|"; }
+  70%   { content: "إنسجام|"; }
+  73.5% { content: "إنسجام|"; }
+  77%   { content: "إنسجا|"; }
+  80.5% { content: "إنسج|"; }
+  84%   { content: "إنس|"; }
+  87.5% { content: "إن|"; }
+  91%   { content: "إ|"; }
+  94.5% { content: "|"; }
+  100%  { content: "|"; }
+}
+
+.custom-btn {
+  background-color: #423DCF;
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.custom-btn:hover {
+  color: black !important;
+}
+
+
+
+/* N   A   V   B   A   R */
+
+
+
+/* S   H   A   R   E   D */
+.navbar .nav-link, #services .card h3{
+  background: linear-gradient(to right, #E1675C, #423DCF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* طبقة غإمقة */
+  z-index: 1;
+  pointer-events: none; /* مهم لأن في روابط تحتها */
+}
+
+#about .about-us, #contact .contact-us  {
+  background: linear-gradient(90deg, #E1675C 0%, #423DCF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-align: center;
+}
+.text-gradient{
+  /* background: linear-gradient(to bottom right, #E1675C 0%, #423DCF 100%); */
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-align: center;
+  background-color: #423DCF;
+}
+
+.custom-icon {
+  margin-bottom: 0 !important; 
+  line-height: 1; 
+  vertical-align: middle;
+  display: inline-block; 
+}
+
+
+/* A   B   O   U   T */
+#about .insejam-word{
+  font-family: 'Great Vibes', cursive; 
+  font-style: italic;                 
+  font-weight: 400;
+  color: #423DCF;               
+}
+
+ 
+
+/* S   E   R   V   I   C   E   S*/
+#services {
+  background: linear-gradient(to bottom right, #E1675C 15%, #423DCF 100%);
+  color: white ;
+
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden; 
+  transition: color 0.3s ease;
+  z-index: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;  
+  transition: all 0.4s ease;
+}
+
+
+/* إلدإئرة */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 0;
+  height: 0;
+  background: linear-gradient(135deg, rgb(248, 217, 241));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.7s ease, height 0.7s ease;
+  z-index: -1;
+}
+
+.service-card:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+}
+
+/* C   O   N   T   A   C   T */
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;   
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 2px solid transparent; 
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(90deg, #E1675C, #423DCF);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 6px rgba(66, 61, 207, 0.3);
+}
+
+.btn-submit {
+  background: #423DCF;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(66, 61, 207, 0.4);
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 6px 12px 12px rgba(66, 61, 207, 0.4);}
+
+
+
+/*  F   O   O   T   E   R */
+.footer {
+  position: relative;
+  color: white;
+  background-image: url("../src/assets/images/pink sunset.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom; /* افتراضياً نركز على الجزء السفلي */
+  overflow: hidden;
+}
+
+/* شاشات متوسطة */
+@media (max-width: 992px) {
+  .footer {
+    background-position: 50% 65%; /* حرك نقطة التركيز شوية لأعلى بالنسبة للعرض الأصغر */
+  }
+}
+
+/* شاشات موبايل صغيرة */
+@media (max-width: 576px) {
+  .footer {
+    background-position: 50% 75%; /* نزّل التركيز أكتر عشان يبان الجزء اللي يهمك */
+  }
+}
+
+
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 20px;
+}
+
+.footer h5 {
+  color: #fff;
+}
+
+.footer p {
+  color: #f1f1f1;
+  font-size: 0.95rem;
+}
+
+.footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  color: #423DCF; /* default icon color */
+  text-decoration: none;
+}
+
+.footer .social-icons a:hover {
+  background: white;
+  color: #E1675C;      /* change icon color */
+  transform: scale(1.15);
+}
+
+.footer .mail:hover, .phone:hover{
+  color: #5954f8 !important;
+}
+
+
+.about-img {
+  height: 400px;   /* حددي الطول اللي تحبيه */
+  overflow: hidden;
+}
+.about-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* يخلي الصورة تملى الطول والعرض بدون ما تتشوه */
 }
